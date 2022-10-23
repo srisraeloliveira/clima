@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react";
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
           {weatherForecast ? (
             <div>
               <div className="justify-content-center">
-                <img src={weatherForecast.current.condition.icon} />
+                <img src={weatherForecast.current.condition.icon}/>
               </div>
               <div>
                 <h1> Temperatura está em: {weatherForecast.current.temp_c}ºC</h1> 
