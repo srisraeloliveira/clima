@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 import { useState } from "react";
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
 
   const handleSearch = () => {
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=1af7db9f4ac143f8bc0195756222310&q=${city}&lang=pt`
+      `https://api.weatherapi.com/v1/current.json?key=1af7db9f4ac143f8bc0195756222310&q=${city}&lang=pt`
     )
       .then((response) => {
         if (response.status === 200) {
