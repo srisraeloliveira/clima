@@ -9,15 +9,15 @@ function App() {
 
   const handleSearch = () => {
     fetch(
-      `https://api.weatherapi.com/v1/current.json?key=1af7db9f4ac143f8bc0195756222310&q=${city}&lang=pt`
+      `http://api.weatherapi.com/v1/forecast.json?key=1af7db9f4ac143f8bc0195756222310&q=${city}&lang=pt`
     )
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        }
-      })
-      .then((data) => {
-        setWeatherForecast(data);
+    .then((response) => {
+      if (response.status === 200) {
+        return response.json();
+      }
+    })
+    .then((data) => {
+      setWeatherForecast(data);
       });
   };
 
@@ -25,7 +25,7 @@ function App() {
     <div>
       <strong className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
         <a className="mx-auto navbar-brand text-white text-bold" href="#top">
-        Previsão do Clima  🌤
+        Previsão do Clima 🌤
         </a>
       </strong>
       <main className="container">
@@ -55,10 +55,16 @@ function App() {
               </div>
               <div>
                 <h1> Temperatura está em: {weatherForecast.current.temp_c}ºC</h1> 
-                <h3> Índice UV: {weatherForecast.current.uv}</h3> 
-                <h3> Sensação térmica está em: {weatherForecast.current.feelslike_c}ºC</h3> 
-                <h3> Hoje o dia está: {weatherForecast.current.condition.text}</h3>
-                <h7> Atualizado em: {weatherForecast.current.last_updated}</h7> 
+                <h2> Hoje o dia está: {weatherForecast.current.condition.text}</h2>
+                <h2> Sensação térmica está em: {weatherForecast.current.feelslike_c}ºC</h2> 
+                <h2> Índice UV: {weatherForecast.current.uv}</h2> 
+                <h2> Temperatura Máxima: {weatherForecast.forecast.forecastday[0].day.maxtemp_c}ºC</h2> 
+                <h2> Temperatura Mínima: {weatherForecast.forecast.forecastday[0].day.mintemp_c}ºC</h2> 
+                <h2> Nascer do Sol: {weatherForecast.forecast.forecastday[0].astro.sunrise}</h2> 
+                <h2> Pôr do Sol: {weatherForecast.forecast.forecastday[0].astro.sunset}</h2> 
+                <h2> Fase da Lua: {weatherForecast.forecast.forecastday[0].astro.moon_phase}</h2>  
+                <h2> Probabilidade de Chuva Diária: {weatherForecast.forecast.forecastday[0].day.daily_chance_of_rain}%</h2> 
+                <a> Atualizado em: {weatherForecast.current.last_updated}</a>   
               </div>
             </div>
           ) : null}
