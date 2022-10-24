@@ -51,7 +51,7 @@ function App() {
           {weatherForecast ? (
             <div>
               <div className="justify-content-center">
-                <img src={weatherForecast.current.condition.icon}/>
+              <img src={weatherForecast.current.condition.icon}/>
               </div>
               <div>
                 <h1> Temperatura está em: {weatherForecast.current.temp_c}ºC</h1> 
@@ -64,7 +64,7 @@ function App() {
                 <h2> Pôr do Sol: {weatherForecast.forecast.forecastday[0].astro.sunset}</h2> 
                 <h2> Fase da Lua: {weatherForecast.forecast.forecastday[0].astro.moon_phase}</h2>  
                 <h2> Probabilidade de Chuva Diária: {weatherForecast.forecast.forecastday[0].day.daily_chance_of_rain}%</h2> 
-                <a> Atualizado em: {weatherForecast.current.last_updated}</a>   
+                <h1> Atualizado em: {weatherForecast.current.last_updated}</h1>   
               </div>
             </div>
           ) : null}
@@ -73,5 +73,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
