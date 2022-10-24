@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './styles.css'
 
 function App() {
   const [city, setCity] = useState("");
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <div>
-      <strong className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <strong className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
         <a className="mx-auto navbar-brand text-white text-bold" href="#top">
         Previsão do Clima 🌤
         </a>
@@ -55,16 +56,16 @@ function App() {
               </div>
               <div>
                 <h1> Temperatura está em: {weatherForecast.current.temp_c}ºC</h1> 
-                <h2> Hoje o dia está: {weatherForecast.current.condition.text}</h2>
-                <h2> Sensação térmica está em: {weatherForecast.current.feelslike_c}ºC</h2> 
-                <h2> Índice UV: {weatherForecast.current.uv}</h2> 
-                <h2> Temperatura Máxima: {weatherForecast.forecast.forecastday[0].day.maxtemp_c}ºC</h2> 
-                <h2> Temperatura Mínima: {weatherForecast.forecast.forecastday[0].day.mintemp_c}ºC</h2> 
-                <h2> Nascer do Sol: {weatherForecast.forecast.forecastday[0].astro.sunrise}</h2> 
-                <h2> Pôr do Sol: {weatherForecast.forecast.forecastday[0].astro.sunset}</h2> 
-                <h2> Fase da Lua: {weatherForecast.forecast.forecastday[0].astro.moon_phase}</h2>  
-                <h2> Probabilidade de Chuva Diária: {weatherForecast.forecast.forecastday[0].day.daily_chance_of_rain}%</h2> 
-                <h1> Atualizado em: {weatherForecast.current.last_updated}</h1>   
+                <h3> Hoje o dia está: {weatherForecast.current.condition.text}</h3>
+                <h3> Sensação térmica está em: {weatherForecast.current.feelslike_c}ºC</h3> 
+                <h3> Índice UV: {weatherForecast.current.uv}</h3> 
+                <h3> Temperatura Máxima: {weatherForecast.forecast.forecastday[0].day.maxtemp_c}ºC</h3> 
+                <h3> Temperatura Mínima: {weatherForecast.forecast.forecastday[0].day.mintemp_c}ºC</h3> 
+                <h3> Nascer do Sol: {weatherForecast.forecast.forecastday[0].astro.sunrise}</h3> 
+                <h3> Pôr do Sol: {weatherForecast.forecast.forecastday[0].astro.sunset}</h3> 
+                <h3> Fase da Lua: {weatherForecast.forecast.forecastday[0].astro.moon_phase}</h3>  
+                <h3> Probabilidade de Chuva Diária: {weatherForecast.forecast.forecastday[0].day.daily_chance_of_rain}%</h3> 
+                <h4 className="att"> Atualizado em: {weatherForecast.current.last_updated}</h4>   
               </div>
             </div>
           ) : null}
